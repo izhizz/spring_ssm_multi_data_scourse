@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.24 (32 bit)
 MySQL - 5.7.22-log : Database - data_source
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -21,18 +22,18 @@ USE `data_source`;
 DROP TABLE IF EXISTS `scourse`;
 
 CREATE TABLE `scourse` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `dbKey` varchar(50) DEFAULT NULL COMMENT '标识',
   `driver` varchar(50) DEFAULT NULL COMMENT '驱动信息',
   `url` varchar(50) DEFAULT NULL COMMENT '数据库地址',
   `username` varchar(50) DEFAULT NULL COMMENT '用户名',
   `password` varchar(50) DEFAULT NULL COMMENT '密码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `scourse` */
 
-insert  into `scourse`(`id`,`dbKey`,`driver`,`url`,`username`,`password`) values (1,'a','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/dataScourse1','root','123456'),(2,'b','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/dataScourse2','root','123456');
+insert  into `scourse`(`id`,`dbKey`,`driver`,`url`,`username`,`password`) values (3,'dataScourse2','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/dataScourse2','root','123456'),(10,'dataScourse3','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/dataScourse3','root','123456'),(11,'dataScourse1','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/dataScourse1','root','123456');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

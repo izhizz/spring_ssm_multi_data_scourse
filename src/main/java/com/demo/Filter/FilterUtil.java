@@ -1,4 +1,6 @@
-package com.demo.utils;
+package com.demo.Filter;
+
+import com.demo.utils.PropertiesUtil;
 
 import javax.servlet.http.HttpServletRequest;
 

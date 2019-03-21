@@ -14,7 +14,7 @@
             </list>
         </property>
     </bean>
-
-    <bean id="requestPathFilter" class="com.demo.utils.RequestPathFilter"></bean>
     <import resource="application-mybatis.xml"/>
+    <bean id="requestPathFilter" class="com.demo.Filter.RequestPathFilter"></bean>
+
 </beans>
