@@ -51,7 +51,15 @@
         </javaClientGenerator>
 
         <!--对应数据库表名，多个表，请复制指定 -->
-        <table schema="demo"  tableName="data_source" domainObjectName="DataSource"
+        <!--<table schema="demo"  tableName="scourse" domainObjectName="Scourse"-->
+               <!--enableCountByExample="false"-->
+               <!--enableUpdateByExample="true"-->
+               <!--enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true">-->
+            <!--<property name="useActualColumnNames" value="false"/>-->
+        <!--</table>-->
+        <table schema="dataScourse1"  tableName="test" domainObjectName="Test"
                enableCountByExample="false"
                enableUpdateByExample="true"
                enableDeleteByExample="true"

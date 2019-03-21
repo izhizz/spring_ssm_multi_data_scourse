@@ -11,10 +11,10 @@
         <property name="locations">
             <list>
                 <value>classpath:db.properties</value>
-
             </list>
         </property>
     </bean>
 
+    <bean id="requestPathFilter" class="com.demo.utils.RequestPathFilter"></bean>
     <import resource="application-mybatis.xml"/>
 </beans>

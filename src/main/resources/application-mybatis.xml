@@ -9,19 +9,23 @@
 
     <!--<context:property-placeholder location="classpath:db.properties"/>-->
 
+    <bean lazy-init="false" class="com.demo.service.impl.DataScourseInit"/>
+
+    <bean id="dataSource" class="com.demo.utils.DynamicDataSource"/>
 
     <!-- 3.数据源 DataSource -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="${jdbc.driver}"/>-->
+        <!--<property name="url" value="${jdbc.url}"/>-->
+        <!--<property name="username" value="${jdbc.username}"/>-->
+        <!--<property name="password" value="${jdbc.password}"/>-->
+    <!--</bean>-->
 
     <context:annotation-config />
     <!--自动扫描，将标注spring注解的类自动转化bean-->
     <!--<context:component-scan base-package="demo.service" />-->
     <!--配置sessionfactory-->
+
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="com.bean" />
         <!--绑定数据源-->
