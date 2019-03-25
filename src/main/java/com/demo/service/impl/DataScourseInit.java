@@ -6,6 +6,7 @@ import com.demo.persistence.entity.ScourseExample;
 import com.demo.service.DataScourceService;
 import com.demo.utils.DynamicDataSource;
 import com.demo.utils.PropertiesUtil;
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -33,6 +34,16 @@ public class DataScourseInit implements InitializingBean {
         List<Scourse> scourses = scourseMapper.selectByExample(new ScourseExample());
         scourses.stream().forEach(s->{
             DynamicDataSource.addDataSource(s.getDbkey(),s.getUrl(),s.getUsername(),s.getPassword(),s.getDriver());
+            Flyway flyway = Flyway
+                    .configure()
+                    .dataSource(s.getUrl(), s.getUsername(), s.getPassword())
+//                .table("")定义表名
+                    .locations("db/migrations")
+                    .baselineOnMigrate(true).load();
+//                flyway.baseline();
+            flyway.repair();
+            flyway.migrate();
+            flyway.info();
         });
     }
 }
